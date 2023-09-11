@@ -1,0 +1,92 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ 
+
+body{
+    display: grid;
+    place-items: center;
+    background: linear-gradient(rgb(1, 22, 21),rgb(4, 46, 44));
+    font-family: 'Share Tech Mono', monospace}
+
+header{
+    width: 100%;
+    min-height: 20vh;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    
+    
+}
+main{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+form{
+    display: flex;
+    width: 700px;
+    min-height: 500px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: black;
+    color: #fff;
+    margin: 50px;
+    border-radius: 30px;
+    border: 1px solid #fff;
+    
+}
+
+input{
+    margin: 30px;
+    width: 500px;
+    height: 30px;
+    font-size: 1.5rem;
+    border: none;
+    outline: none;
+    background: black;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    
+}
+
+#correcto{
+    width: 200px;
+    height: 30px;
+    font-size: 1.5rem;
+    margin: 30px;
+
+}
+
+#enviar{
+    width: 500px;
+    height: 30px;
+    margin: 30px;
+    color:#fff;
+    background: linear-gradient(rgb(13, 49, 32), rgb(22, 102, 63));
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#enviar:hover{
+    background:linear-gradient(rgb(22, 102, 63), rgb(13, 49, 32)); 
+}
+h1{
+    display: inline-block;
+    margin-left: 400px;
+    margin-top: 30px;
+    font-size: 3rem;
+    background-color: black;
+    padding: 20px 30px;
+    border-radius: 50px;
+    border: 1px solid #fff;
+
+}
+

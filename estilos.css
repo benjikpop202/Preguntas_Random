@@ -1,0 +1,103 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+body{
+    display: grid;
+    place-items: center;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.top{
+   width: 100%;
+   background-color: #333;
+   align-items: center;
+   display: flex;
+   justify-content: flex-start;
+
+
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    display: inline-block;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-color: #333;
+   
+
+}
+
+
+
+h1{
+    display: inline-block;
+    text-align: center;
+    color: aliceblue;
+    font-size: 60px;
+    padding: 50px 30px;
+    margin-top: 30px;
+    margin-left: 350px;
+    background: linear-gradient(rgb(185, 92, 185), indigo, rgb(83, 83, 172));
+    border-radius: 20px 30px;
+    border: 2px solid #eee;
+    box-shadow: .5rem .5rem 1rem #2b2a2a,
+    -.5rem -.5rem 1rem black;
+    
+
+}
+
+.boton{
+display: inline-block;
+background: linear-gradient(rgb(190, 82, 172),pink);
+font-weight: bold;
+color: #fff;
+text-decoration: none;
+font-size: 1.5rem;
+padding: 20px 107px;
+border: 2px solid #eee;
+border-radius: 50px ;
+cursor: pointer;
+transition: all 1s ease;
+box-shadow: .5rem .5rem 1rem #2b2a2a,
+-.5rem -.5rem 1rem black
+;
+margin-top: 100px;
+margin-left: 300px;
+
+}
+
+.boton:hover{
+    background: linear-gradient(pink,rgb(190, 83, 172));
+}
+
+.boton2{
+    display: inline-block;
+    background: linear-gradient(pink,rgb(190, 83, 172));
+    color:#fff;
+    text-decoration: none;
+    padding: 20px 40px;
+    font-size: 1.5rem;
+    border: 2px solid #eee;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 110px;
+    margin-left:100px ;
+    transition: all 1s ease;
+    box-shadow: .5rem .5rem 1rem #2b2a2a,
+-.5rem -.5rem 1rem black
+;
+    
+}
+
+.boton2:hover{
+    background: linear-gradient(rgb(190, 83, 172),pink);
+}
+
+
