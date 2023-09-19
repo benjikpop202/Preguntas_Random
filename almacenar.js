@@ -1,4 +1,4 @@
-const preguntas = require('./juego')
+/*
 
 let pregunta = document.getElementById("pregunta")
 let opcionA = document.getElementById("opcionA")
@@ -20,5 +20,5 @@ function addQuestions(){
 enviar.addEventListener("click",addQuestions)
 
 
-
+*/
 
