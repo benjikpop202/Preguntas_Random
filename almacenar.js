@@ -1,4 +1,4 @@
-/*import preguntas from "./juego.js"
+const preguntas = require('./juego')
 
 let pregunta = document.getElementById("pregunta")
 let opcionA = document.getElementById("opcionA")
@@ -21,4 +21,4 @@ enviar.addEventListener("click",addQuestions)
 
 
 
-*/
+

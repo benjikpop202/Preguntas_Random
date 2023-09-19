@@ -16,7 +16,7 @@ let pregunta5 = {"pregunta":"¿en una funcion lineal que letra se la conoce a la
  
 let preguntas = [pregunta1,pregunta2,pregunta3,pregunta4,pregunta5]; 
 
-
+exports.preguntas = preguntas;
 
 
 
