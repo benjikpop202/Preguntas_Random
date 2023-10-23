@@ -22,5 +22,5 @@ enviar.addEventListener("click",addQuestions)
 
 */
 
-//este es un comentario
+
 
