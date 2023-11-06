@@ -4,6 +4,7 @@ const boton1 = document.getElementById("a");
 const boton2 = document.getElementById("b");
 const boton3 = document.getElementById("c");
 let continuar = document.getElementById("continuar");
+let interval
 
 
 
@@ -148,7 +149,7 @@ function decrementarSegundo(){
     }
 }
 
-const interval = setInterval(decrementarSegundo, 1000);
+interval = setInterval(decrementarSegundo, 1000);
 
 }
 
