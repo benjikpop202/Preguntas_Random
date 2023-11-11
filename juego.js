@@ -149,7 +149,7 @@ function decrementarSegundo(){
     }
 }
 
-interval = setInterval(decrementarSegundo, 1000);
+interval = setInterval(decrementarSegundo, 900);
 
 }
 
