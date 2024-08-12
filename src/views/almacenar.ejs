@@ -10,21 +10,19 @@
 <body>
   <header> <h1>CREA TUS PREGUNTAS ¿? </h1> </header>
     <main class="caja">
-      <form>
-       <input type="text" id="pregunta" placeholder="ingrese pregunta">
-       <input type="text" id="opcionA" placeholder="opcion a">
-       <input type="text" id="opcionB" placeholder="opcion b">
-       <input type="text" id="opcionC" placeholder="opcion c">
+      <form  action="/almacenar" method="post">
+       <input type="text" name="pregunta" id="pregunta" placeholder="ingrese pregunta">
+       <input type="text" name="opcion1" id="opcionA" placeholder="opcion a">
+       <input type="text" name="opcion2" id="opcionB" placeholder="opcion b">
+       <input type="text" name="opcion3" id="opcionC" placeholder="opcion c">
        <label for="correcto">INGRESE LA OPCION CORRECTA</label>
-       <select name="asunto" id="correcto">
+       <select name="respuesta" id="correcto">
         <option value="A">a</option>
         <option value="B">b</option>
         <option value="C">c</option>
        </select>
-       <button id="enviar">ENVIAR</button>
-       
+       <button type="submit" id="enviar">ENVIAR</button>
       </form>
     </main>
-    <script src="almacenar.js" ></script>
 </body>
 </html>
