@@ -108,6 +108,10 @@ footer{
     background-color: #c4475c;
 }
 
+.hiddenSpan{
+   visibility: hidden;
+}
+
 #continuar{
     
     text-decoration: none;

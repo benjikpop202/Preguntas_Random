@@ -11,70 +11,27 @@
     <div class="contenedor">
      <main>
      <section>
-     <!--<% let m = Math.floor(Math.random() * preguntas.length) %> -->
-      <div id="marco"></div>  
+     <% let m = Math.floor(Math.random() * preguntas.length) %>
+     <% let random = preguntas[m] %>
+      <div id="marco" "><%= random.pregunta %></div>  
        
-      <button class="option" id="a"></button>
+      <button class="option" id="A" value="A"><%= random.opcion1 %></button>
     
-      <button class="option" id="b"></button>
+      <button class="option" id="B" value="B"><%= random.opcion2 %></button>
 
-      <button class="option" id="c"></button>
+      <button class="option" id="C" value="C"><%= random.opcion3 %></button>
 
      </section>
 
      <aside>
 
         <span id="contador">10</span>
-        <a id="continuar" href="/juego">CONTINUAR</a>
+        <a id="continuar" href="/preguntas">CONTINUAR</a>
 
      </aside>
      </main>
-        <% preguntas.forEach(index =>{ %>
-         <ul>
-            <li><%= index.pregunta %></li>
-            <li><%= index.opcion1 %></li>
-            <li><%= index.opcion2 %></li>
-            <li><%= index.opcion3 %></li>
-         </ul>
-       <% }) %>
+     <span id="<%= random.respuesta %>" class="hiddenSpan"></span>
     </div>
-
-    <script>
-let boton1 = document.getElementById('a')
-let boton2 = document.getElementById('b')
-let boton3 = document.getElementById('c')
-let continuar = document.getElementById('continuar')
-function Temporizador(){
-    let segundos = 10;
-
-    function Actualizar(){
-        document.getElementById("contador").innerText = segundos;
-    }
-
-
-function decrementarSegundo(){
-    if(segundos > 0){
-        segundos--;
-        Actualizar()
-    }
-    else{
-      clearInterval(interval)
-      document.getElementById("a").disabled = true
-      document.getElementById("b").disabled = true
-      document.getElementById("c").disabled = true
-      boton1.style.backgroundColor = "#c4475c"
-      boton2.style.backgroundColor = "#c4475c"
-      boton3.style.backgroundColor = "#c4475c"
-      continuar.style.visibility = "visible"
-      
-    }
-}
-
-interval = setInterval(decrementarSegundo, 900);
-
-}
-
-window.onload = Temporizador;
-    </script>
+    <script src="../Functions/juego.js"></script>
 </body>
 </html>

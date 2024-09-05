@@ -1,4 +1,6 @@
+const Preguntas = require('../models/preguntas.js')
 const PreguntasDB = require('../models/preguntas.js')
+const SolicitudDB = require('../models/solicitudes.js')
 
  const GetPreguntas = async (req, res) =>{
     try {
@@ -14,15 +16,15 @@ const PreguntasDB = require('../models/preguntas.js')
  const AddPregunta = async (req, res)=>{
     const {pregunta, opcion1, opcion2, opcion3, respuesta} = req.body
     try {
-        const NewPregunta = new PreguntasDB({
-            pregunta: pregunta,
-            opcion1: opcion1,
-            opcion2: opcion2,
-            opcion3: opcion3,
-            respuesta:respuesta
+        const NewPregunta = await PreguntasDB.create({
+            pregunta,
+            opcion1,
+            opcion2,
+            opcion3,
+            respuesta
         })
         await NewPregunta.save()
-        res.status(200).redirect('/almacenar')
+        console.log(NewPregunta);
     } catch (error) {
         res.status(500).send(error)
     }
