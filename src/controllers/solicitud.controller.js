@@ -1,10 +1,10 @@
 const PreguntasDB = require('../models/preguntas.js')
 const SolicitudDB = require('../models/solicitudes.js')
 
-const getSolicitudes = async (req, res)=>{
+const GetSolicitudes = async (req, res)=>{
     try {
         const Solicitudes = await SolicitudDB.find()
-        res.status(200).render('../views/admin/form.ejs',{
+        res.status(200).render('../views/admin/solicitudes.ejs',{
             solicitudes: Solicitudes
         })
     } catch (error) {
@@ -30,4 +30,4 @@ const AddSolicitud = async (req, res)=>{
     }
 }
 
-module.exports = {getSolicitudes, AddSolicitud}
+module.exports = {GetSolicitudes, AddSolicitud}

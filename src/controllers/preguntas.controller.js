@@ -2,6 +2,7 @@ const Preguntas = require('../models/preguntas.js')
 const PreguntasDB = require('../models/preguntas.js')
 const SolicitudDB = require('../models/solicitudes.js')
 
+ //usuario
  const GetPreguntas = async (req, res) =>{
     try {
         const preguntasDB = await PreguntasDB.find()
@@ -9,7 +10,7 @@ const SolicitudDB = require('../models/solicitudes.js')
             preguntas: preguntasDB
         })
     } catch (error) {
-        res.status(500).send(error)
+        res.status(500).send(error.message)
     }
 }
 
@@ -26,9 +27,22 @@ const SolicitudDB = require('../models/solicitudes.js')
         await NewPregunta.save()
         console.log(NewPregunta);
     } catch (error) {
-        res.status(500).send(error)
+        res.status(500).send(error.message)
     }
 }
 
-module.exports = {GetPreguntas, AddPregunta}
+//admin
+
+const GetPreguntasAdmin = async (req, res)=>{
+    try {
+        const preguntasDB = await PreguntasDB.find()
+        res.status(200).render('../views/admin/preguntas.ejs',{
+            preguntas: preguntasDB
+        })
+    } catch (error) {
+        res.status(500).send(error.message)
+    }
+}
+
+module.exports = {GetPreguntas, AddPregunta, GetPreguntasAdmin}
 

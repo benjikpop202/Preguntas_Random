@@ -1,8 +1,8 @@
 const express = require('express')
 const path = require('path')
 const morgan = require('morgan')
-const WebRouter = require('./routers/webRutes.routes.js')
-const PreguntasRoutes = require('./routers/preguntas.routes.js')
+const UserRoutes = require('./routers/user.routes.js')
+const AdminRoutes = require('./routers/admin.routes.js')
 const bodyParser = require('body-parser')
 
 const app = express();
@@ -12,8 +12,8 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, '/')));
-app.use(WebRouter)
-app.use(PreguntasRoutes)
+app.use(AdminRoutes)
+app.use(UserRoutes)
 
 
 module.exports = app
