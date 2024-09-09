@@ -10,7 +10,7 @@ body{
     align-items: center;
     justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(#333, blueviolet, violet);
+    background: linear-gradient(45deg, #333, blueviolet, violet);
 }
 
 .card{

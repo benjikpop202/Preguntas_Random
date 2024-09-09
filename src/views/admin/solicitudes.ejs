@@ -9,7 +9,8 @@
     <title>solicitudes</title>
 </head>
 <body>
-    <table class="table w-75 h-50 mt-5">
+  <h2 class="text-white bg-dark mt-3 p-3">Solicitudes: <%=solicitudes.length %></h2>
+    <table class="table table-striped w-80 h-50 mt-5">
         <thead>
           <tr >
             <tr>
@@ -25,26 +26,37 @@
         </thead>
         <tbody>
           <% solicitudes.forEach(solicitud =>{ %>
-            <tr>
+            <tr data-id="<%= solicitud._id %>">
               <th scope="row"><%= solicitud._id %></th>
               <td><%= solicitud.pregunta %></td>
               <td><%= solicitud.opcion1 %></td>
               <td><%= solicitud.opcion2 %></td>
               <td><%= solicitud.opcion3 %></td>
               <td><%= solicitud.respuesta %></td>
-              <td><form action="/admin/solicitudes/aceptar" method="POST">
+              <td><form action="/admin/solicitudes" method="POST">
                 <input type="hidden" name="id" value="<%= solicitud._id %>">
+                <input type="hidden" name="pregunta" value="<%= solicitud.pregunta %>">
+                <input type="hidden" name="opcion1" value="<%= solicitud.opcion1 %>">
+                <input type="hidden" name="opcion2" value="<%= solicitud.opcion2 %>">
+                <input type="hidden" name="opcion3" value="<%= solicitud.opcion3 %>">
+                <input type="hidden" name="respuesta" value="<%= solicitud.respuesta %>">
                 <button type="submit" class="btn btn-success"><img src="../../images/check_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="aceptar"></button>
               </form> </td>
               <td>
-                <form action="/admin/solicitudes/rechazar" method="POST">
-                  <input type="hidden" name="id" value="<%= solicitud._id %>">
-                  <button type="submit" class="btn btn-danger"><img src="../../images/delete_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="rechazar"></button>
-                </form>
+                <form action="/admin/solicitudes/<%= solicitud._id %>" method="POST">
+                  <input type="hidden" name="_method" value="DELETE">
+                  <button type="submit" class="btn btn-danger">
+                      <img src="../../images/delete_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="Eliminar">
+                  </button>
+              </form>
+              
               </td>
             </tr>
          <% }) %>
         </tbody>
       </table>
+      <script>
+
+      </script>
 </body>
 </html>

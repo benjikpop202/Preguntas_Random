@@ -15,7 +15,7 @@ const SolicitudDB = require('../models/solicitudes.js')
 }
 
  const AddPregunta = async (req, res)=>{
-    const {pregunta, opcion1, opcion2, opcion3, respuesta} = req.body
+    const {id,pregunta, opcion1, opcion2, opcion3, respuesta} = req.body
     try {
         const NewPregunta = await PreguntasDB.create({
             pregunta,
@@ -26,6 +26,10 @@ const SolicitudDB = require('../models/solicitudes.js')
         })
         await NewPregunta.save()
         console.log(NewPregunta);
+        const DeleteSolicitud = await SolicitudDB.deleteOne({_id:id})
+        if(DeleteSolicitud){
+            res.status(200).redirect('/admin/solicitudes')
+        }
     } catch (error) {
         res.status(500).send(error.message)
     }
@@ -44,5 +48,19 @@ const GetPreguntasAdmin = async (req, res)=>{
     }
 }
 
-module.exports = {GetPreguntas, AddPregunta, GetPreguntasAdmin}
+const DeletePregunta = async (req, res) => {
+    const id  = req.params.id;
+    try {
+        const result = await PreguntasDB.deleteOne({ _id: id });
+        if (result.deletedCount > 0) {
+            res.status(200).redirect('/admin/preguntas');
+        } else {
+            res.status(404).send('pregunta no encontrada');
+        }
+    } catch (error) {
+        res.status(500).send(error.message);
+    }
+};
+
+module.exports = {GetPreguntas, AddPregunta, GetPreguntasAdmin, DeletePregunta}
 

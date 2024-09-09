@@ -26,8 +26,23 @@ const AddSolicitud = async (req, res)=>{
         console.log(NewSolicitud);
         res.status(200).redirect('/almacenar')
     } catch (error) {
-        res.status(500).send(error)
+        res.status(500).send(error.message)
     }
 }
 
-module.exports = {GetSolicitudes, AddSolicitud}
+const DeleteSolicitud = async (req, res) => {
+    const id  = req.params.id;
+    try {
+        const result = await SolicitudDB.deleteOne({ _id: id });
+        if (result.deletedCount > 0) {
+            res.status(200).redirect('/admin/solicitudes');
+        } else {
+            res.status(404).send('Solicitud no encontrada');
+        }
+    } catch (error) {
+        res.status(500).send(error.message);
+    }
+};
+
+
+module.exports = {GetSolicitudes, AddSolicitud, DeleteSolicitud}
