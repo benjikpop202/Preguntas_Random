@@ -1,4 +1,5 @@
 const PreguntasDB = require('../models/preguntas.js')
+const Solicitudes = require('../models/solicitudes.js')
 const SolicitudDB = require('../models/solicitudes.js')
 
 const GetSolicitudes = async (req, res)=>{
@@ -44,5 +45,16 @@ const DeleteSolicitud = async (req, res) => {
     }
 };
 
+const SolicitudNotification = async (req, res)=>{
+    try {
+        const solicitudes = await SolicitudDB.find()
+        res.status(200).render('../views/admin/form.ejs',{
+            solicitudesNotification: solicitudes
+        })
+    } catch (error) {
+        
+    }
+}
 
-module.exports = {GetSolicitudes, AddSolicitud, DeleteSolicitud}
+
+module.exports = {GetSolicitudes, AddSolicitud, DeleteSolicitud, SolicitudNotification}

@@ -39,3 +39,18 @@ body{
 .card h1{
     font-size: 2.3rem;
 }
+
+a{
+  position: relative;
+}
+
+.notificacion{
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    background-color: rgb(71, 185, 147);
+    color: #f4f4f4;
+    border: 1px solid #f4f4f4;
+    padding: 15px 20px;
+    border-radius: 100%;
+}

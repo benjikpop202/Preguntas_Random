@@ -20,8 +20,8 @@ function decrementarSegundo(){
     else{
       clearInterval(interval)
       document.getElementById("A").disabled = true
-      document.getElementById("A").disabled = true
-      document.getElementById("A").disabled = true
+      document.getElementById("B").disabled = true
+      document.getElementById("C").disabled = true
       boton1.style.backgroundColor = "#c4475c"
       boton2.style.backgroundColor = "#c4475c"
       boton3.style.backgroundColor = "#c4475c"
@@ -30,7 +30,7 @@ function decrementarSegundo(){
     }
 }
 
-interval = setInterval(decrementarSegundo, 700);
+interval = setInterval(decrementarSegundo, 650);
 
 }
 

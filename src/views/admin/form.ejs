@@ -9,8 +9,15 @@
 <body>
  <div class="card">
     <h1>Admin</h1>
-    <a href="/admin/solicitudes">Solicitudes</a>
+    <a href="/admin/solicitudes">Solicitudes <span class="notificacion" id="<%= solicitudesNotification.length %>"><%= solicitudesNotification.length %></span></a>
     <a href="/admin/preguntas">Preguntas</a>
  </div>
 </body>
+<script>
+ let notificacion = document.querySelector(".notificacion")
+ let id = notificacion.id
+ if(id == 0){
+    notificacion.style.visibility = "hidden"
+ }
+</script>
 </html>
