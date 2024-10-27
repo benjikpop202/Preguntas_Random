@@ -1,5 +1,4 @@
 const PreguntasDB = require('../models/preguntas.js')
-const Solicitudes = require('../models/solicitudes.js')
 const SolicitudDB = require('../models/solicitudes.js')
 
 const GetSolicitudes = async (req, res)=>{
